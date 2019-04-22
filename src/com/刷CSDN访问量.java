@@ -10,7 +10,7 @@ import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.List;
 
-public class URL1 {
+public class 刷CSDN访问量 {
 
     public static void main(String[] args) throws InterruptedException {
         List<String> list = new ArrayList<>();
@@ -36,10 +36,12 @@ public class URL1 {
 ////        list.add("https://blog.csdn.net/sinat_41905822/article/details/80630846");
 ////        list.add("https://blog.csdn.net/sinat_41905822/article/details/88600503");
 //        list.add("https://blog.csdn.net/sinat_41905822/article/details/88981871");
+        list.add("https://blog.csdn.net/sinat_41905822/article/details/81454709");
         list.add("https://blog.csdn.net/sinat_41905822/article/details/89043642");
         list.add("https://blog.csdn.net/sinat_41905822/article/details/88981871");
-        list.add("https://blog.csdn.net/sinat_41905822/article/details/80657932");
-
+        list.add("https://blog.csdn.net/sinat_41905822/article/details/80657932"); //博客地址
+        list.add("https://blog.csdn.net/qq_42347755/article/details/89112506");
+        list.add("https://blog.csdn.net/qq_42347755/article/details/89057135");
         int i = list.size();
         int j = 0;
         while (true) {
