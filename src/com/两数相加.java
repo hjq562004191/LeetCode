@@ -1,109 +1,81 @@
 package com;
 
-
+@SuppressWarnings("all")
 public class 两数相加 {
     public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        ListNode sumlist = new ListNode(0);
-        ListNode temp = sumlist;
-        for (int i = 0; i < 100; i++) {
-            if(l1!=null && l2!=null){
-                temp.next = new ListNode(l1.val+l2.val);
-                if (l1.next != null ) {
-                    l1 = l1.next;
-                }
-                if (l2.next != null){
-                   l2 = l2.next;
-                }
-                if (l1.next == null && l2.next == null)
-                    break;
-                temp = temp.next;
-            }else if (l1!=null&&l2 == null){
-                temp.next = new ListNode(l1.val);
-                if (l1.next != null)
-                l1 = l1.next;
-                else
-                    break;
-            }else if (l2!=null&&l1 == null){
-                temp.next = new ListNode(l2.val);
-                if (l2.next != null)
-                l2 = l2.next;
-                else
-                    break;
-            }else {
-                break;
-            }
+        if (l1.val == 0 && l1.next == null){
+            return l2;
         }
-        temp = sumlist.next;
-        for (int i = 0; i < 100; i++) {
-            if (temp==null)
+        if (l2.val == 0 && l2.next == null){
+            return l1;
+        }
+        ListNode sumhead = new ListNode(0);
+        ListNode t1 = l1,t2 = l2;
+        ListNode temp = sumhead;
+        while (t1!=null && t2!=null){
+            temp.next = new ListNode(t1.val + t2.val);
+            temp = temp.next;
+            if (t1.next != null && t2.next != null)
+                t1 = t1.next;
+            else
                 break;
-            if (temp.val>=10){
-                temp.val -= 10;
-                if (temp.next != null)
-                    temp.next.val+=1;
-                else
-                    temp.next = new ListNode(1);
-            }
-//            if (i == count && temp.val >= 10){
-//                temp.val-=10;
-//                temp.next = new ListNode(1);
-//            }
+            if (t2.next != null)
+                t2 = t2.next;
+            else
+                break;
+        }
+        while (t1.next != null ){
+            t1 = t1.next;
+            temp.next = new ListNode(t1.val);
             temp = temp.next;
         }
-//        String c1="",c2="";
-//        for (int i = 0; i < 100; i++) {
-//            if (temp!=null){
-//               c1 = c1 + String.valueOf(temp.val);
-//                temp=temp.next;
-//            }
-//        }
-//        temp = l2;
-//        for (int i = 0; i < 100; i++) {
-//            if (temp!=null){
-//                c2 = c2 + String.valueOf(temp.val);
-//                temp=temp.next;
-//            }
-//        }
-//        BigInteger count1=new BigInteger(c1);
-//        System.out.println(count1);
-//        BigInteger count2=new BigInteger(c2);
-//        System.out.println(count2);
-//        count1=count1.add(count2);
-//        System.out.println(count1);
-//        temp = new ListNode(Integer.valueOf(count1.remainder(new BigInteger("10")).toString()));
-//        count1=count1.divide(new BigInteger("10"));
-//        sumlist.next = temp;
-//        for (int i = 0; i < 10; i++) {
-//            if (count1.toString().equals("0"))
-//                break;
-//            else {
-//                temp.next = new ListNode(Integer.valueOf(count1.remainder(new BigInteger("10")).toString()));
-//                temp = temp.next;
-//                count1=count1.divide(new BigInteger("10"));
-//            }
-//        }
-        temp = sumlist.next;
-        for (int i = 0; i < 100; i++) {
-            if (temp !=null){
-                System.out.println(temp.val);
-                temp = temp.next;
+        while (t2.next != null ){
+            t2 = t2.next;
+            temp.next = new ListNode(t2.val);
+            temp = temp.next;
+        }
+        temp = sumhead;
+        while (temp.next!=null){
+            temp = temp.next;
+            if (temp.val>9){
+                temp.val -= 10;
+                if (temp.next == null){
+                    temp.next = new ListNode(1);
+                }else {
+                    temp.next.val += 1;
+                }
             }else {
-                break;
+                continue;
             }
         }
-        return sumlist.next;
+        temp = sumhead.next;
+        while (temp!=null){
+            System.out.print(temp.val + " ");
+            if (temp.next != null)
+                temp = temp.next;
+            else
+                break;
+        }
+       return sumhead.next;
     }
     public static void main(String[] args) {
         ListNode l1 = new ListNode(1);
-        ListNode l2 = new ListNode(0);
-        l1.next = new ListNode(4);
+//        l1.next = new ListNode(4);
 //        l1.next.next = new ListNode(3);
-//        l2.next = new ListNode(6);
+        ListNode l2 = new ListNode(9);
+        l2.next = new ListNode(8);
 //        l2.next.next = new ListNode(4);
-        addTwoNumbers(l1,l2);
+        ListNode l = addTwoNumbers(l2,l1);
+//        while (l!=null){
+//            System.out.print(l.val + " ");
+//            if (l.next != null)
+//            l = l.next;
+//            else
+//            break;
+//        }
     }
 
-    public static class ListNode {
+    private static class ListNode {
       int val;
       ListNode next;
       ListNode(int x) { val = x; }
