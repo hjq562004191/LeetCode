@@ -46,28 +46,28 @@ public class 刷CSDN访问量 {
         int j = 0;
         while (true) {
             try {
-                URL url = new URL(list.get(j%i));
+                URL url = new URL(list.get(j % i));
 
                 URLConnection URLconnection = url.openConnection();
                 HttpURLConnection httpConnection = (HttpURLConnection) URLconnection;
                 int responseCode = httpConnection.getResponseCode();
                 if (responseCode == HttpURLConnection.HTTP_OK) {
-                    System.err.println("成功:"+(j+1));
+                    System.err.println("成功:" + (j + 1));
                     j++;
-                InputStream in = httpConnection.getInputStream();
-                InputStreamReader isr = new InputStreamReader(in);
-                BufferedReader bufr = new BufferedReader(isr);
-                bufr.close();
+                    InputStream in = httpConnection.getInputStream();
+                    InputStreamReader isr = new InputStreamReader(in);
+                    BufferedReader bufr = new BufferedReader(isr);
+                    bufr.close();
                 } else {
                     System.err.println("失败");
                 }
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            if (j%i == i-1){
-                    System.out.println("睡眠1分钟");
-                    Thread.sleep(1000*60); //睡眠1分钟
-                }
+            if (j % i == i - 1) {
+                System.out.println("睡眠1分钟");
+                Thread.sleep(1000 * 60); //睡眠1分钟
+            }
         }
     }
 }

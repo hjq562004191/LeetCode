@@ -13,8 +13,10 @@ public class 验证二叉搜索树 {
         boolean t = isValidBST(root);
         System.out.println(t);
     }
+
     static int[] res;
     static int k;
+
     public static boolean isValidBST(TreeNode root) {
         int k = 0;
         res = new int[99999];
@@ -24,7 +26,7 @@ public class 验证二叉搜索树 {
 
         for (int i = 0; i < k - 1; i++) {
 //            System.out.println(res[i] + " ");
-            if (res[i] >= res[i+1]){
+            if (res[i] >= res[i + 1]) {
                 return false;
             }
         }
@@ -32,19 +34,22 @@ public class 验证二叉搜索树 {
     }
 
     private static void read(TreeNode root) {
-         if (root.left!=null)
-        read(root.left);
+        if (root.left != null)
+            read(root.left);
 
         res[k++] = root.val;
 
         if (root.right != null)
-        read(root.right);
+            read(root.right);
     }
 
     public static class TreeNode {
-      int val;
-      TreeNode left;
-      TreeNode right;
-      TreeNode(int x) { val = x; }
-  }
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode(int x) {
+            val = x;
+        }
+    }
 }

@@ -1,19 +1,19 @@
 import java.util.Scanner;
 import java.util.Stack;
 
-public class q2 {
+public class 疼讯面试题2 {
     public static void main(String[] args) {
         int n;
         Scanner scanner = new Scanner(System.in);
         n = scanner.nextInt();
         scanner.nextLine();
-        String  s = scanner.nextLine();
+        String s = scanner.nextLine();
         Stack<Character> stack = new Stack<>();
         for (int i = 0; i < n; i++) {
-            if (!stack.empty()&&s.charAt(i) != stack.peek()){
+            if (!stack.empty() && s.charAt(i) != stack.peek()) {
                 stack.pop();
 
-            }else {
+            } else {
                 stack.push(s.charAt(i));
 
             }

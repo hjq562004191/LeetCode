@@ -5,6 +5,7 @@ public class 字符串转换整数atoi {
         int a = myAtoi("2");
         System.out.println(a);
     }
+
     public static int myAtoi(String str) {
         if (str == "")
             return 0;
@@ -12,26 +13,26 @@ public class 字符串转换整数atoi {
         int len = str.length();
         boolean f = false;
         for (int i = 0; i < len; i++) {
-            if (str.charAt(i) >= '0' && str.charAt(i)<= '9'){
+            if (str.charAt(i) >= '0' && str.charAt(i) <= '9') {
                 s = str.substring(i);
                 break;
             }
-            if (str.charAt(i) == '+'){
-                s = str.substring(i+1);
+            if (str.charAt(i) == '+') {
+                s = str.substring(i + 1);
                 break;
             }
-            if (str.charAt(i) == ' '){
+            if (str.charAt(i) == ' ') {
                 continue;
-            }else if (str.charAt(i) == '-'){
+            } else if (str.charAt(i) == '-') {
                 f = true;
-                s = str.substring(i+1);
+                s = str.substring(i + 1);
                 break;
-            }else {
+            } else {
                 return 0;
             }
         }
         System.out.println(s);
-        long num  = 0;
+        long num = 0;
         if (f == true) {
             for (int i = 0; i < s.length(); i++) {
                 if (s.charAt(i) >= '0' && s.charAt(i) <= '9') {
@@ -44,8 +45,8 @@ public class 字符串转换整数atoi {
                     break;
                 }
             }
-            return -1 * (int)num;
-        }else {
+            return -1 * (int) num;
+        } else {
             for (int i = 0; i < s.length(); i++) {
                 if (s.charAt(i) >= '0' && s.charAt(i) <= '9') {
                     num *= 10;
@@ -57,7 +58,7 @@ public class 字符串转换整数atoi {
                     break;
                 }
             }
-            return (int)num;
+            return (int) num;
         }
     }
 }

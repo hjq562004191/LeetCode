@@ -1,4 +1,5 @@
 package com;
+
 /*
 给定一个排序数组，你需要在原地删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。
 
@@ -37,9 +38,10 @@ for (int i = 0; i < len; i++) {
  */
 public class 删除排序数组中的重复项 {
     public static void main(String[] args) {
-        int[] n = {1,2};
+        int[] n = {1, 2};
         removeDuplicates(n);
     }
+
     public static int removeDuplicates(int[] nums) {
         int p = 0;
         if (nums.length == 0)
@@ -47,9 +49,9 @@ public class 删除排序数组中的重复项 {
         if (nums.length == 1)
             return 1;
         nums[p++] = nums[0];
-        for (int i = 0; i < nums.length-1; i++) {
-            if (nums[i] != nums[i+1]){
-                nums[p++] = nums[i+1];
+        for (int i = 0; i < nums.length - 1; i++) {
+            if (nums[i] != nums[i + 1]) {
+                nums[p++] = nums[i + 1];
             }
         }
         System.out.println(p);

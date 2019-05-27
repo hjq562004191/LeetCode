@@ -32,28 +32,29 @@ public class 整数反转 {
 //        }
         System.out.println(reverse(-2147483641));
     }
+
     public static int reverse(int x) {
-        if (x == 0 || x == -2147483648){
+        if (x == 0 || x == -2147483648) {
             return 0;
         }
-        String num="";
+        String num = "";
         boolean f = false;
-        if (x<0){
+        if (x < 0) {
             f = true;
             x = -x;
         }
-        while (x != 0){
-            num+=x%10;
-            x/=10;
+        while (x != 0) {
+            num += x % 10;
+            x /= 10;
         }
-        if (f == false && Long.parseLong(num) >= Math.pow(2,31)-1){
+        if (f == false && Long.parseLong(num) >= Math.pow(2, 31) - 1) {
             return 0;
-        }else if (f == true && Long.parseLong(num) >= Math.pow(2,31)) {
+        } else if (f == true && Long.parseLong(num) >= Math.pow(2, 31)) {
             return 0;
-        }else {
-            if (f){
-                return (-1*Integer.parseInt(num));
-            }else {
+        } else {
+            if (f) {
+                return (-1 * Integer.parseInt(num));
+            } else {
                 return Integer.parseInt(num);
             }
         }

@@ -29,19 +29,20 @@ public class 无重复字符的最长子串 {
     public static void main(String[] args) {
         lengthOfLongestSubstring("aab");
     }
+
     public static int lengthOfLongestSubstring(String s) {
         int len = s.length();
-        if (len == 1 ){
+        if (len == 1) {
             return 1;
         }
-        if (len == 2){
-            if (s.charAt(0) == s.charAt(1)){
+        if (len == 2) {
+            if (s.charAt(0) == s.charAt(1)) {
                 return 1;
-            }else {
+            } else {
                 return 2;
             }
         }
-        if (s == ""){
+        if (s == "") {
             return 0;
         }
         int max = 0;
@@ -50,17 +51,17 @@ public class 无重复字符的最长子串 {
             set = new HashSet<>();
 //            set.add(s.charAt(i));
             for (int j = i; j < len; j++) {
-                if (set.contains(s.charAt(j))){
-                    if (set.size() > max){
+                if (set.contains(s.charAt(j))) {
+                    if (set.size() > max) {
                         max = set.size();
                         break;
-                    }else {
+                    } else {
                         break;
                     }
-                }else {
+                } else {
                     set.add(s.charAt(j));
                 }
-                if (j == len - 1){
+                if (j == len - 1) {
                     if (set.size() > max)
                         max = set.size();
                 }

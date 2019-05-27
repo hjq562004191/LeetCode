@@ -8,14 +8,15 @@ public class 最长公共前缀 {
 //        s[2] = "flight";
         longestCommonPrefix(s);
     }
+
     public static String longestCommonPrefix(String[] strs) {
         String preStr = "";
 
         int len = strs.length;
-        if (len == 1){
+        if (len == 1) {
             return strs[0];
         }
-        if (len == 0){
+        if (len == 0) {
             return preStr;
         }
         boolean f = true;
@@ -23,14 +24,14 @@ public class 最长公共前缀 {
         while (f) {
             for (int i = 0; i < len - 1; i++) {
                 if (strs[i] == "") {
-                    f= false;
+                    f = false;
                     break;
-                }else if (strs[i].length() > k && strs[i+1].length() > k){
-                    if (strs[i].charAt(k) != strs[i+1].charAt(k)){
+                } else if (strs[i].length() > k && strs[i + 1].length() > k) {
+                    if (strs[i].charAt(k) != strs[i + 1].charAt(k)) {
                         f = false;
                         break;
                     }
-                }else{
+                } else {
                     f = false;
                     break;
                 }
@@ -40,7 +41,7 @@ public class 最长公共前缀 {
 //        if (k == 1)
 //            preStr = strs[0];
 //        else
-        preStr = strs[0].substring(0,k-1);
+        preStr = strs[0].substring(0, k - 1);
 
 
         System.out.println(preStr);

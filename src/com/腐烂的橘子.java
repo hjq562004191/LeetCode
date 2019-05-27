@@ -13,10 +13,10 @@ public class 腐烂的橘子 {
             int[] jtemp = new int[10];
             for (int i = 0; i < ilen; i++) {
                 for (int j = 0; j < jlen; j++) {
-                    if (grid[i][j] == 1){
+                    if (grid[i][j] == 1) {
                         count++;
                     }
-                    if (grid[i][j] == 2){
+                    if (grid[i][j] == 2) {
                         itemp[k] = i;
                         jtemp[k++] = j;
                     }
@@ -32,35 +32,35 @@ public class 腐烂的橘子 {
                 max = k;
                 k = 0;
                 for (int i = 0; i < max; i++) {
-                        if (grid[itemp[k]][jtemp[k]] == 2){
-                            if (itemp[k] > 0 && grid[itemp[k]-1][jtemp[k]] == 1){
-                                grid[itemp[k]-1][jtemp[k]] = 2;
-                                count--;
-                                flag = true;
-                            }
-                            if (itemp[k] < ilen-1 && grid[itemp[k]+1][jtemp[k]] == 1){
-                                grid[itemp[k]+1][jtemp[k]] = 2;
-                                count--;
-                                flag = true;
-                            }
-                            if (jtemp[k] > 0 && grid[itemp[k]][jtemp[k]-1] == 1){
-                                grid[itemp[k]][jtemp[k]-1] = 2;
-                                count--;
-                                flag = true;
-                            }
-                            if (jtemp[k] < jlen-1 && grid[itemp[k]][jtemp[k]+1] == 1){
-                                grid[itemp[k]][jtemp[k]+1] = 2;
-                                count--;
-                                flag = true;
-                            }
+                    if (grid[itemp[k]][jtemp[k]] == 2) {
+                        if (itemp[k] > 0 && grid[itemp[k] - 1][jtemp[k]] == 1) {
+                            grid[itemp[k] - 1][jtemp[k]] = 2;
+                            count--;
+                            flag = true;
                         }
-                        k++;
+                        if (itemp[k] < ilen - 1 && grid[itemp[k] + 1][jtemp[k]] == 1) {
+                            grid[itemp[k] + 1][jtemp[k]] = 2;
+                            count--;
+                            flag = true;
+                        }
+                        if (jtemp[k] > 0 && grid[itemp[k]][jtemp[k] - 1] == 1) {
+                            grid[itemp[k]][jtemp[k] - 1] = 2;
+                            count--;
+                            flag = true;
+                        }
+                        if (jtemp[k] < jlen - 1 && grid[itemp[k]][jtemp[k] + 1] == 1) {
+                            grid[itemp[k]][jtemp[k] + 1] = 2;
+                            count--;
+                            flag = true;
+                        }
+                    }
+                    k++;
                 }
                 min++;
                 k = 0;
                 for (int i = 0; i < ilen; i++) {
                     for (int j = 0; j < jlen; j++) {
-                        if (grid[i][j] == 2){
+                        if (grid[i][j] == 2) {
                             itemp[k] = i;
                             jtemp[k++] = j;
                         }
@@ -72,12 +72,13 @@ public class 腐烂的橘子 {
             return min;
         }
     }
+
     public static void main(String[] args) {
         int[][] nums;
-        nums  = new int[][]{{2,1,1},
-                {1,1,0},
-                {0,1,1}};
-        Solution s= new Solution();
+        nums = new int[][]{{2, 1, 1},
+                {1, 1, 0},
+                {0, 1, 1}};
+        Solution s = new Solution();
         System.out.println(s.orangesRotting(nums));
     }
 }

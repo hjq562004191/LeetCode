@@ -8,30 +8,31 @@ public class 合并K个排序链表 {
         listNodes[0] = new ListNode(1);
         listNodes[0].next = new ListNode(4);
         listNodes[0].next.next = new ListNode(5);
-        listNodes[1] =  new ListNode(1);
+        listNodes[1] = new ListNode(1);
         listNodes[1].next = new ListNode(3);
         listNodes[1].next.next = new ListNode(4);
-        listNodes[2] =  new ListNode(2);
+        listNodes[2] = new ListNode(2);
         listNodes[2].next = new ListNode(6);
         ListNode result = mergeKLists(listNodes);
-        while (result!=null){
+        while (result != null) {
             System.out.println(result.val);
             result = result.next;
         }
     }
+
     public static ListNode mergeKLists(ListNode[] lists) {
         int[] a = new int[99999];
         int k = 0;
-        for (ListNode l:lists
-             ) {
-            while (l!=null) {
+        for (ListNode l : lists
+                ) {
+            while (l != null) {
                 a[k++] = l.val;
                 l = l.next;
             }
         }
         for (int i = 0; i < k; i++) {
-            for (int j = i+1; j < k; j++) {
-                if (a[i] > a[j]){
+            for (int j = i + 1; j < k; j++) {
+                if (a[i] > a[j]) {
                     int t = a[i];
                     a[i] = a[j];
                     a[j] = t;
@@ -50,9 +51,13 @@ public class 合并K个排序链表 {
         }
         return result.next;
     }
+
     private static class ListNode {
-      int val;
-      ListNode next;
-      ListNode(int x) { val = x; }
-  }
+        int val;
+        ListNode next;
+
+        ListNode(int x) {
+            val = x;
+        }
+    }
 }
