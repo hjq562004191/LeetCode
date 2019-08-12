@@ -10,38 +10,17 @@ import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 好像被禁止了
+ */
 public class 刷CSDN访问量 {
 
     public static void main(String[] args) throws InterruptedException {
         List<String> list = new ArrayList<>();
-//        list.add("https://blog.csdn.net/sinat_41905822/article/details/88957852");
-//        list.add("https://blog.csdn.net/sinat_41905822/article/details/88779813");
-//        list.add("https://blog.csdn.net/qq_42347755/article/details/86554939");
-//        list.add("https://blog.csdn.net/sinat_41905822/article/details/88726548");
-//        list.add("https://blog.csdn.net/sinat_41905822/article/details/88427394");
-//        list.add("https://blog.csdn.net/qq_42347755/article/details/83004839");
-//        list.add("https://blog.csdn.net/sinat_41905822/article/details/88427220");
-//        list.add("https://blog.csdn.net/sinat_41905822/article/details/80657932");
-//        list.add("https://blog.csdn.net/sinat_41905822/article/details/80657989");
-//        list.add("https://blog.csdn.net/sinat_41905822/article/details/87637470");
-//        list.add("https://blog.csdn.net/qq_42347755/article/details/84928943");
-//        list.add("https://blog.csdn.net/sinat_41905822/article/details/83448748");
-//        list.add("https://blog.csdn.net/qq_42347755/article/details/84928680");
-//        list.add("https://blog.csdn.net/sinat_41905822/article/details/89043642");
-////        list.add("https://blog.csdn.net/sinat_41905822/article/details/81772299");
-//        list.add("https://blog.csdn.net/qq_42347755/article/details/84929590");
-//        list.add("https://blog.csdn.net/sinat_41905822/article/details/81186472");
-//        list.add("https://blog.csdn.net/sinat_41905822/article/details/80631484");
-//        list.add("https://blog.csdn.net/qq_42347755/article/details/85225508");
-////        list.add("https://blog.csdn.net/sinat_41905822/article/details/80630846");
-////        list.add("https://blog.csdn.net/sinat_41905822/article/details/88600503");
-//        list.add("https://blog.csdn.net/sinat_41905822/article/details/88981871");
-        list.add("https://blog.csdn.net/sinat_41905822/article/details/81454709");
-        list.add("https://blog.csdn.net/sinat_41905822/article/details/89043642");
-        list.add("https://blog.csdn.net/sinat_41905822/article/details/88981871");
-        list.add("https://blog.csdn.net/sinat_41905822/article/details/80657932"); //博客地址
-        list.add("https://blog.csdn.net/qq_42347755/article/details/89112506");
-        list.add("https://blog.csdn.net/qq_42347755/article/details/89057135");
+        list.add("https://blog.csdn.net/sinat_41905822/article/details/96962671");
+        list.add("https://blog.csdn.net/sinat_41905822/article/details/97104850");
+        list.add("https://blog.csdn.net/sinat_41905822/article/details/97245016");
+        list.add("https://blog.csdn.net/sinat_41905822/article/details/89058729");
         int i = list.size();
         int j = 0;
         while (true) {
