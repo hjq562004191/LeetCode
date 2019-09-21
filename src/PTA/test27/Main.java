@@ -6,16 +6,15 @@ import java.util.Scanner;
 public class Main {
     public static void main(String args[]) {
         Scanner scanner = new Scanner(System.in);
-        int N = scanner.nextInt();
-        double max = 0;
-        double min = 999;
-        double sum = 0;
+        float N = scanner.nextFloat();
+        float max = 0;
+        float min = 999;
+        float sum = 0;
         for (int i = 0; i < N; i++) {
-            double a = scanner.nextDouble();
+            float a = scanner.nextFloat();
             if (max < a){
                 max = a;
-            }
-            if (min > a){
+            }else if (min > a){
                 min = a;
             }
             sum += a;
