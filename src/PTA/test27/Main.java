@@ -6,21 +6,23 @@ import java.util.Scanner;
 public class Main {
     public static void main(String args[]) {
         Scanner scanner = new Scanner(System.in);
-        float N = scanner.nextFloat();
-        float max = 0;
-        float min = 999;
-        float sum = 0;
-        for (int i = 0; i < N; i++) {
-            float a = scanner.nextFloat();
-            if (max < a){
-                max = a;
-            }else if (min > a){
-                min = a;
+        while (scanner.hasNext()) {
+            float N = scanner.nextFloat();
+            float max = 0;
+            float min = 999;
+            float sum = 0;
+            for (int i = 0; i < N; i++) {
+                float a = scanner.nextFloat();
+                if (max < a) {
+                    max = a;
+                } else if (min > a) {
+                    min = a;
+                }
+                sum += a;
             }
-            sum += a;
+            sum -= max;
+            sum -= min;
+            System.out.println(String.format("%.2f", sum / (N - 2)));
         }
-        sum -= max;
-        sum -= min;
-        System.out.println(String.format("%.2f",sum/(N-2)));
     }
 }
