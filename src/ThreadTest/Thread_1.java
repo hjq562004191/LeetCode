@@ -1,5 +1,8 @@
 package ThreadTest;
 
+/**
+ * 两个线程交替打印1—100的数字
+ */
 public class Thread_1 {
     public static volatile boolean flag = true;
     public static volatile int i = 1;
