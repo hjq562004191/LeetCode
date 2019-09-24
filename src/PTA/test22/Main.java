@@ -1,33 +1,33 @@
 package PTA.test22;
 
 import java.util.Scanner;
-
-@SuppressWarnings("all")
 public class Main {
-    public static void main(String args[]) {
-        Scanner scanner = new Scanner(System.in);
-        int a;
-        int zheng = 0;
-        int fu = 0;
-        int sum = 0;
-
-        do {
-            a = scanner.nextInt();
-            if (a > 0){
-                zheng++;
-                sum +=a;
-            }else if (a < 0){
-                fu++;
-                sum +=a;
-            }
-        }while (a != 0);
-        System.out.println(zheng);
-        System.out.println(fu);
-        System.out.println(sum);
-        if (zheng+fu != 0) {
-            System.out.println(sum / (double) (zheng + fu));
-        }else {
-            System.out.println(0);
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        String s = in.nextLine();
+        if (s.equals("0")){
+            return;
         }
+        String[] s1 = s.split(" ");
+        int[] o=new int[s1.length];
+        for (int i=0;i<s1.length;i++){
+            o[i]=Integer.valueOf(s1[i]);
+        }
+        double sum=0;
+        int num1=0;
+        int num2=0;
+        for (int i=0;i<o.length;i++){
+            if (o[i]>0){
+                num1++;
+            }else if (o[i]<0){
+                num2++;
+            }
+            sum+=o[i];
+        }
+        System.out.println(num1);
+        System.out.println(num2);
+        int a=(int)sum;
+        System.out.println(a);
+        System.out.println(sum/(num1+num2));
     }
 }
