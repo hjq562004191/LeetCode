@@ -1,6 +1,9 @@
 package ThreadTest;
 
-import java.util.Arrays;
+/**
+ * 三个线程打印，2线程打印3的倍数，3线程打印5的倍数，1线程打印剩下的数字，1~100以内
+ */
+
 import java.util.concurrent.Semaphore;
 
 public class Thread_2 {
