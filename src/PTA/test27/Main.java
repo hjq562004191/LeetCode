@@ -7,25 +7,26 @@ public class Main {
     public static void main(String args[]) {
         Scanner scanner = new Scanner(System.in);
         while (scanner.hasNext()) {
-            int N = scanner.nextInt();
-            if (N == 0) {
+            String N = scanner.nextLine();
+            if (N.equals("0")) {
                 System.out.println(0);
             } else {
-                float max = 0;
-                float min = 999;
-                float sum = 0;
-                for (int i = 0; i < N; i++) {
-                    float a = scanner.nextFloat();
-                    if (max < a) {
-                        max = a;
-                    } else if (min > a) {
-                        min = a;
+                double max = 0;
+                double min = 11;
+                double sum = 0;
+                String s = scanner.nextLine();
+                String[] strings = s.split(" ");
+                for (int i = 0; i < strings.length; i++) {
+                    if (max < Double.parseDouble(strings[i])) {
+                        max = Double.parseDouble(strings[i]);
+                    } else if (min > Double.parseDouble(strings[i])) {
+                        min = Double.parseDouble(strings[i]);
                     }
-                    sum += a;
+                    sum += Double.parseDouble(strings[i]);
                 }
                 sum -= max;
                 sum -= min;
-                System.out.println(String.format("%.2f", sum / (N - 2)));
+                System.out.println(String.format("%.2f", sum / (Integer.parseInt(N) - 2)));
             }
         }
     }
