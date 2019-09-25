@@ -14,7 +14,12 @@ public class Main {
             if (strings[i].charAt(0)=='-'){
                 sum += Integer.parseInt(strings[i]);
             }else if (strings[i].charAt(0)>='0' && strings[i].charAt(0) <= '9'){
-                sum += Integer.parseInt(strings[i]);
+                try {
+                    sum += Integer.parseInt(strings[i]);
+                }catch (Exception a){
+                    f = true;
+                    continue;
+                }
             }else {
                 f = true;
             }
