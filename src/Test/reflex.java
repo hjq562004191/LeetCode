@@ -5,7 +5,7 @@ import java.lang.reflect.Method;
 
 public class reflex {
     public static void main(String[] args) throws Exception {
-        System.out.println(getProperty(new Person("zhangsan"),"name"));
+        System.out.println(getProperty(new Person1("zhangsan"),"name"));
         printStr();
     }
     //写一个方法，此方法可以获取obj对象中名为propertyName的属性的值
@@ -27,17 +27,17 @@ public class reflex {
         method.invoke(p);
     }
 }
-class Person{
+class Person1{
     private String name = "小明";
 
     public void print(){
         System.out.println(this.name);
     }
 
-    public Person() {
+    public Person1() {
     }
 
-    public Person(String name) {
+    public Person1(String name) {
         this.name = name;
     }
 }
